@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bao Mao 40 - Délicieux Bao Buns en Mouvement !</title>
+    <title>Bao Mao 40 - Délicieux Bao Buns & Cuisine de Rue Asiatique !</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
@@ -43,6 +43,11 @@
         .mobile-menu-open {
             display: flex;
         }
+        /* Ensure logo scales properly */
+        .logo-img {
+            max-height: 2.5rem; /* Equivalent to h-10 */
+            width: auto;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -50,8 +55,11 @@
     <!-- Barre de Navigation -->
     <nav class="bg-white shadow-lg p-4 sticky top-0 z-50 rounded-b-xl">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo/Nom de la Marque -->
-            <a href="#" class="text-3xl font-extrabold text-orange-600 tracking-tight">Bao Mao 40</a>
+            <!-- Logo et Nom de la Marque -->
+            <a href="#" class="flex items-center">
+                <img src="assets/img/logo.svg" alt="Logo Bao Mao 40" class="logo-img mr-2">
+                <span class="text-3xl font-extrabold text-orange-600 tracking-tight">Bao Mao 40</span>
+            </a>
 
             <!-- Navigation Bureau -->
             <div class="hidden md:flex space-x-8 items-center">
@@ -59,18 +67,14 @@
                 <a href="#menu" class="text-gray-700 hover:text-orange-600 font-medium transition duration-300">Menu</a>
                 <a href="#locations" class="text-gray-700 hover:text-orange-600 font-medium transition duration-300">Emplacements</a>
                 <a href="#contact" class="text-gray-700 hover:text-orange-600 font-medium transition duration-300">Contact</a>
-                <!-- Sélecteur de Langue pour Bureau -->
-                <a href="index.html" class="ml-4 px-3 py-1 bg-gray-100 rounded-full text-gray-700 hover:bg-gray-200 transition duration-300">
-                    English
-                </a>
+                <!-- Sélecteur de Langue pour Bureau (Drapeau) -->
+                <a href="index.html" class="ml-4 px-3 py-1 bg-gray-100 rounded-full text-gray-700 hover:bg-gray-200 transition duration-300 text-xl" title="English">🇬🇧</a>
             </div>
 
             <!-- Bouton Menu Mobile -->
             <div class="md:hidden flex items-center">
-                <!-- Sélecteur de Langue pour Mobile -->
-                <a href="index.html" class="mr-4 px-3 py-1 bg-gray-100 rounded-full text-gray-700 hover:bg-gray-200 transition duration-300 text-sm">
-                    En
-                </a>
+                <!-- Sélecteur de Langue pour Mobile (Drapeau) -->
+                <a href="index.html" class="mr-4 px-3 py-1 bg-gray-100 rounded-full text-gray-700 hover:bg-gray-200 transition duration-300 text-xl" title="English">🇬🇧</a>
                 <button id="mobile-menu-button" class="text-gray-700 hover:text-orange-600 focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
@@ -88,13 +92,14 @@
 
     <!-- Section Héro -->
     <section id="home" class="relative bg-gradient-to-r from-orange-500 to-red-500 text-white py-20 md:py-32 overflow-hidden rounded-b-3xl shadow-xl">
-        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://placehold.co/1920x1080/FFD700/FFFFFF?text=Delicious+Food+Truck');"></div>
+        <!-- Image de fond mise à jour vers truck.svg -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('assets/img/truck.svg');"></div>
         <div class="container mx-auto relative z-10 text-center px-4">
             <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
                 Goûtez la Joie du Bao !
             </h1>
             <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
-                Des bao buns authentiques et innovants, préparés avec passion et servis frais depuis notre food truck !
+                Une cuisine de rue asiatique authentique et innovante, préparée avec passion et servie fraîche depuis notre food truck !
             </p>
             <a href="#menu" class="btn-primary inline-block text-lg">
                 Découvrez Notre Menu <i class="fas fa-arrow-right ml-2"></i>
@@ -107,7 +112,7 @@
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">À Propos de Bao Mao 40</h2>
             <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Bao Mao 40 vous apporte les saveurs vibrantes de la cuisine de rue asiatique directement ! Nous sommes spécialisés dans les bao buns moelleux et cuits à la vapeur, garnis d'une variété d'ingrédients délicieux et frais. Notre mission est de servir le bonheur, un bao à la fois, en veillant à ce que chaque bouchée soit une expérience délicieuse. Nous sommes fiers d'être une aventure culinaire mobile, apportant de la nourriture gastronomique dans les rues des Landes et au-delà !
+                Bao Mao 40 vous apporte les saveurs vibrantes de la cuisine de rue asiatique directement ! Nous sommes spécialisés dans les bao buns moelleux et cuits à la vapeur et une variété d'autres délicieux plats asiatiques frais. Notre mission est de servir le bonheur, une bouchée à la fois, en veillant à ce que chaque repas soit une expérience délicieuse. Nous sommes fiers d'être une aventure culinaire mobile, apportant de la nourriture gastronomique dans les rues des Landes et au-delà !
             </p>
             <div class="mt-10 flex justify-center space-x-6">
                 <div class="flex flex-col items-center">
@@ -126,65 +131,131 @@
         </div>
     </section>
 
-    <!-- Section Menu -->
+    <!-- Section Menu (Mis à jour avec de nouveaux éléments et images du menu fourni) -->
     <section id="menu" class="py-16 md:py-24 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Notre Délicieux Menu</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Article du Menu 1 -->
+                <!-- Article du Menu: Onigiris Tamago -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Pulled+Pork+Bao" alt="Bao Porc Effiloché" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Le Classique Bao au Porc</h3>
-                    <p class="text-gray-600 mb-4">Porc effiloché cuit lentement avec une sauce BBQ acidulée, une salade croquante et une touche de coriandre.</p>
-                    <span class="text-orange-600 text-xl font-bold">€8.50</span>
+                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Onigiris+Tamago" alt="Onigiris Tamago" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Onigiris Tamago (3pcs)</h3>
+                    <p class="text-gray-600 mb-4">Triangle de riz à sushi farci avec un appareil œuf mayonnaise et ciboulette, Nori.</p>
+                    <span class="text-orange-600 text-xl font-bold">€9.00</span>
                 </div>
 
-                <!-- Article du Menu 2 -->
+                <!-- Article du Menu: Rouleaux de Printemps -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Chicken+Bao" alt="Bao Poulet Épicé" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Bao au Poulet Épicé</h3>
-                    <p class="text-gray-600 mb-4">Poulet grillé mariné dans une sauce gochujang épicée, daikon mariné et graines de sésame.</p>
-                    <span class="text-orange-600 text-xl font-bold">€8.90</span>
+                    <img src="assets/img/nems.png" alt="Rouleaux de Printemps" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Rouleaux de Printemps (2P)</h3>
+                    <p class="text-gray-600 mb-4">Galette de riz, vermicelles de riz, pousses de soja, carotte, menthe-coriandre, crevettes, filet de poulet mariné et cacahuètes.</p>
+                    <span class="text-orange-600 text-xl font-bold">€4.50</span>
                 </div>
 
-                <!-- Article du Menu 3 -->
+                <!-- Article du Menu: Salade de Chou -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Veggie+Bao" alt="Bao Délice Végétarien" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Bao Délice Végétarien</h3>
-                    <p class="text-gray-600 mb-4">Légumes de saison sautés, tofu croustillant et une sauce aux cacahuètes savoureuse.</p>
-                    <span class="text-orange-600 text-xl font-bold">€7.90</span>
+                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Salade+de+Chou" alt="Salade de Chou" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Salade de Chou</h3>
+                    <p class="text-gray-600 mb-4">Chou blanc, oignons rouges émincés et carottes.</p>
+                    <span class="text-orange-600 text-xl font-bold">€2.50</span>
                 </div>
 
-                <!-- Article du Menu 4 -->
+                <!-- Article du Menu: Box Katsu -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Shrimp+Bao" alt="Bao Crevettes Croustillantes" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Bao aux Crevettes Croustillantes</h3>
-                    <p class="text-gray-600 mb-4">Crevettes frites dorées, avocat frais et une aïoli citronnée.</p>
+                    <img src="assets/img/box katsu.png" alt="Box Katsu" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Box Katsu</h3>
+                    <p class="text-gray-600 mb-4">Boîte de 8 morceaux de poulet mariné frits panko. Servis avec au choix sauce spicy ou douce.</p>
+                    <span class="text-orange-600 text-xl font-bold">€8.00</span>
+                </div>
+
+                <!-- Article du Menu: Nasi Goreng Poulet/Crevettes -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
+                    <img src="assets/img/nasi goreng.png" alt="Nasi Goreng Poulet/Crevettes" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Nasi Goreng poulet/crevettes</h3>
+                    <p class="text-gray-600 mb-4">Riz indonésien mariné sauté avec un émincé de poulet et crevettes, du kecap manis, épices et légumes.</p>
                     <span class="text-orange-600 text-xl font-bold">€9.50</span>
                 </div>
 
-                <!-- Article du Menu 5 -->
+                <!-- Article du Menu: Gua Bao - Porc Dongpo -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Dessert+Bao" alt="Bao Haricot Rouge Sucré" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Bao Haricot Rouge Sucré</h3>
-                    <p class="text-gray-600 mb-4">Une délicieuse gâterie sucrée avec une garniture crémeuse à la pâte de haricot rouge.</p>
-                    <span class="text-orange-600 text-xl font-bold">€5.00</span>
+                    <img src="assets/img/le porc dongpo.png" alt="Gua Bao - Porc Dongpo" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Gua Bao - Porc Dongpo</h3>
+                    <p class="text-gray-600 mb-4">Bao bun moelleux vapeur, garni de poitrine de porc mijotée.</p>
+                    <span class="text-orange-600 text-xl font-bold">€10.00</span>
                 </div>
 
-                <!-- Article du Menu 6 -->
+                <!-- Article du Menu: Gua Bao - Saï Gok -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Drink" alt="Boissons Rafraîchissantes" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Boissons Rafraîchissantes</h3>
-                    <p class="text-gray-600 mb-4">Une sélection de boissons locales et d'inspiration asiatique.</p>
-                    <span class="text-orange-600 text-xl font-bold">€3.00 - €4.50</span>
+                    <img src="assets/img/le sai gok.png" alt="Gua Bao - Saï Gok" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Gua Bao - Saï Gok</h3>
+                    <p class="text-gray-600 mb-4">Bao bun moelleux vapeur, garni de saucisse de porc à la citronnelle tranchée.</p>
+                    <span class="text-orange-600 text-xl font-bold">€10.00</span>
+                </div>
+
+                <!-- Article du Menu: Gua Bao - Veggie -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
+                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Gua+Bao+Veggie" alt="Gua Bao - Veggie" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Gua Bao - Veggie</h3>
+                    <p class="text-gray-600 mb-4">Bao bun moelleux vapeur, garni de champignons japonais Shimeji avec une pâte à frire assaisonnée et panure panko.</p>
+                    <span class="text-orange-600 text-xl font-bold">€10.00</span>
+                </div>
+
+                <!-- Article du Menu: Gua Bao - Katsu -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
+                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Gua+Bao+Katsu" alt="Gua Bao - Katsu" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Gua Bao - Katsu</h3>
+                    <p class="text-gray-600 mb-4">Bao bun moelleux vapeur, garni de morceaux de poulet mariné frits panko.</p>
+                    <span class="text-orange-600 text-xl font-bold">€10.00</span>
+                </div>
+
+                <!-- Article du Menu: Poké Poulet -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
+                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Poke+Poulet" alt="Poké Poulet" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Poké Poulet</h3>
+                    <p class="text-gray-600 mb-4">Morceaux de poulet marinés panés panko et frits servis sur un bol de riz à sushi assaisonné au gingembre avec légumes marinés, frais et sauce.</p>
+                    <span class="text-orange-600 text-xl font-bold">€12.00</span>
+                </div>
+
+                <!-- Article du Menu: Bò bún -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
+                    <img src="assets/img/bo bun.png" alt="Bò bún" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Bò bún</h3>
+                    <p class="text-gray-600 mb-4">Salade fraîche à base de vermicelles de riz assaisonnée avec de la sauce nem, accompagnée de légumes frais et marinés, servis avec un émincé de bœuf mariné.</p>
+                    <span class="text-orange-600 text-xl font-bold">€11.00</span>
+                </div>
+
+                <!-- Article du Menu: Dessert du Moment -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
+                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Dessert" alt="Dessert du Moment" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Dessert du moment</h3>
+                    <p class="text-gray-600 mb-4">Demandez à notre équipe notre douceur du jour !</p>
+                    <span class="text-orange-600 text-xl font-bold">€4.50</span>
+                </div>
+
+                <!-- Article du Menu: Boissons -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
+                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Boissons" alt="Boissons" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Boissons</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-tight">
+                        Soda: €2.50<br>
+                        Eau (33cl): €1.00<br>
+                        Bubble Tea: €5.50<br>
+                        Thé Glacé maison: €4.00<br>
+                        Café: €1.00
+                    </p>
+                    <span class="text-orange-600 text-xl font-bold">Divers</span>
                 </div>
             </div>
 
             <div class="text-center mt-12">
-                <p class="text-gray-700 text-lg">
+                <p class="text-gray-700 text-lg mb-4">
                     Consultez notre <a href="https://www.instagram.com/bao.mao40/" target="_blank" class="text-orange-600 hover:underline font-semibold">page Instagram</a> pour les spéciaux du jour et les ajouts saisonniers !
                 </p>
+                <!-- Bouton Télécharger le Menu -->
+                <a href="assets/pdf/menu_fr.pdf" download class="btn-primary inline-block text-lg">
+                    Télécharger le Menu (PDF) <i class="fas fa-file-pdf ml-2"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -237,7 +308,8 @@
                     <i class="fas fa-phone-alt text-orange-500 text-3xl"></i>
                     <div>
                         <p class="font-semibold text-gray-700">Appelez-nous :</p>
-                        <a href="tel:+33612345678" class="text-blue-600 hover:underline">+33 6 12 34 56 78</a>
+                        <!-- Numéro de téléphone mis à jour -->
+                        <a href="tel:+33626399737" class="text-blue-600 hover:underline">+33 6 26 39 97 37</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4 bg-white p-6 rounded-xl shadow-lg w-full md:w-auto">
