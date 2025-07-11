@@ -9,79 +9,39 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Custom styles for Inter font and general body */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* Light background */
-            color: #333;
-        }
-        /* Smooth scroll for navigation */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Custom button style */
-        .btn-primary {
-            background-color: #f97316; /* Orange color */
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px; /* Fully rounded */
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .btn-primary:hover {
-            background-color: #ea580c; /* Darker orange on hover */
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }
-        /* Card hover effect */
-        .menu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-        }
-        /* Mobile menu specific styles */
-        .mobile-menu-open {
-            display: flex;
-        }
-        /* Ensure logo scales properly */
-        .logo-img {
-            max-height: 2.5rem; /* Equivalent to h-10 */
-            width: auto;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f8f8; color: #333; }
+        html { scroll-behavior: smooth; }
+        .btn-primary { background-color: #f97316; color: white; padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .btn-primary:hover { background-color: #ea580c; transform: translateY(-2px); box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); }
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); }
+        .mobile-menu-open { display: flex; }
+        .logo-img { max-height: 2.5rem; width: auto; }
+        .promo-banner { width: 150px; text-align: center; }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Barre de Navigation -->
-    <nav class="bg-white shadow-lg p-4 sticky top-0 z-50 rounded-b-xl">
+    <nav class="bg-white/80 backdrop-blur-md shadow-lg p-4 sticky top-0 z-50 rounded-b-xl">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo et Nom de la Marque -->
             <a href="#" class="flex items-center">
                 <img src="assets/img/logo.svg" alt="Logo Bao Mao 40" class="logo-img mr-2">
                 <span class="text-3xl font-extrabold text-orange-600 tracking-tight">Bao Mao 40</span>
             </a>
-
-            <!-- Navigation Bureau -->
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#home" class="text-gray-700 hover:text-orange-600 font-medium transition duration-300">Accueil</a>
                 <a href="#menu" class="text-gray-700 hover:text-orange-600 font-medium transition duration-300">Menu</a>
                 <a href="#locations" class="text-gray-700 hover:text-orange-600 font-medium transition duration-300">Emplacements</a>
                 <a href="#contact" class="text-gray-700 hover:text-orange-600 font-medium transition duration-300">Contact</a>
-                <!-- Sélecteur de Langue pour Bureau (Drapeau) -->
                 <a href="index.html" class="ml-4 px-3 py-1 bg-gray-100 rounded-full text-gray-700 hover:bg-gray-200 transition duration-300 text-xl" title="English">🇬🇧</a>
             </div>
-
-            <!-- Bouton Menu Mobile -->
             <div class="md:hidden flex items-center">
-                <!-- Sélecteur de Langue pour Mobile (Drapeau) -->
                 <a href="index.html" class="mr-4 px-3 py-1 bg-gray-100 rounded-full text-gray-700 hover:bg-gray-200 transition duration-300 text-xl" title="English">🇬🇧</a>
                 <button id="mobile-menu-button" class="text-gray-700 hover:text-orange-600 focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-
-        <!-- Menu Mobile (Masqué par défaut) -->
         <div id="mobile-menu" class="hidden md:hidden flex-col items-center mt-4 space-y-4">
             <a href="#home" class="text-gray-700 hover:text-orange-600 font-medium transition duration-300 py-2 w-full text-center">Accueil</a>
             <a href="#menu" class="text-gray-700 hover:text-orange-600 font-medium transition duration-300 py-2 w-full text-center">Menu</a>
@@ -92,18 +52,11 @@
 
     <!-- Section Héro -->
     <section id="home" class="relative bg-gradient-to-r from-orange-500 to-red-500 text-white py-20 md:py-32 overflow-hidden rounded-b-3xl shadow-xl">
-        <!-- Image de fond mise à jour vers truck.svg -->
         <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('assets/img/truck.svg');"></div>
         <div class="container mx-auto relative z-10 text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-                Goûtez la Joie du Bao !
-            </h1>
-            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
-                Une cuisine de rue asiatique authentique et innovante, préparée avec passion et servie fraîche depuis notre food truck !
-            </p>
-            <a href="#menu" class="btn-primary inline-block text-lg">
-                Découvrez Notre Menu <i class="fas fa-arrow-right ml-2"></i>
-            </a>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">Goûtez la Joie du Bao !</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">Une cuisine de rue asiatique authentique et innovante, préparée avec passion et servie fraîche depuis notre food truck !</p>
+            <a href="#menu" class="btn-primary inline-block text-lg">Découvrez Notre Menu <i class="fas fa-arrow-right ml-2"></i></a>
         </div>
     </section>
 
@@ -111,151 +64,23 @@
     <section id="about" class="py-16 md:py-24 bg-white rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">À Propos de Bao Mao 40</h2>
-            <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Bao Mao 40 vous apporte les saveurs vibrantes de la cuisine de rue asiatique directement ! Nous sommes spécialisés dans les bao buns moelleux et cuits à la vapeur et une variété d'autres délicieux plats asiatiques frais. Notre mission est de servir le bonheur, une bouchée à la fois, en veillant à ce que chaque repas soit une expérience délicieuse. Nous sommes fiers d'être une aventure culinaire mobile, apportant de la nourriture gastronomique dans les rues des Landes et au-delà !
-            </p>
-            <div class="mt-10 flex justify-center space-x-6">
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-truck-moving text-orange-500 text-4xl mb-3"></i>
-                    <p class="text-lg font-semibold text-gray-700">Mobile & Frais</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-utensils text-orange-500 text-4xl mb-3"></i>
-                    <p class="text-lg font-semibold text-gray-700">Saveurs Gourmandes</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-heart text-orange-500 text-4xl mb-3"></i>
-                    <p class="text-lg font-semibold text-gray-700">Fait avec Amour</p>
-                </div>
-            </div>
+            <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">Bao Mao 40 vous apporte les saveurs vibrantes de la cuisine de rue asiatique directement ! Nous sommes spécialisés dans les bao buns moelleux et cuits à la vapeur et une variété d'autres délicieux plats asiatiques frais. Notre mission est de servir le bonheur, une bouchée à la fois, en veillant à ce que chaque repas soit une expérience délicieuse. Nous sommes fiers d'être une aventure culinaire mobile, apportant de la nourriture gastronomique dans les rues des Landes et au-delà !</p>
         </div>
     </section>
 
-    <!-- Section Menu (Mis à jour avec de nouveaux éléments et images du menu fourni) -->
+    <!-- Section Menu -->
     <section id="menu" class="py-16 md:py-24 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Notre Délicieux Menu</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Article du Menu: Onigiris Tamago -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Onigiris+Tamago" alt="Onigiris Tamago" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Onigiris Tamago (3pcs)</h3>
-                    <p class="text-gray-600 mb-4">Triangle de riz à sushi farci avec un appareil œuf mayonnaise et ciboulette, Nori.</p>
-                    <span class="text-orange-600 text-xl font-bold">€9.00</span>
-                </div>
-
-                <!-- Article du Menu: Rouleaux de Printemps -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="assets/img/nems.png" alt="Rouleaux de Printemps" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Rouleaux de Printemps (2P)</h3>
-                    <p class="text-gray-600 mb-4">Galette de riz, vermicelles de riz, pousses de soja, carotte, menthe-coriandre, crevettes, filet de poulet mariné et cacahuètes.</p>
-                    <span class="text-orange-600 text-xl font-bold">€4.50</span>
-                </div>
-
-                <!-- Article du Menu: Salade de Chou -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Salade+de+Chou" alt="Salade de Chou" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Salade de Chou</h3>
-                    <p class="text-gray-600 mb-4">Chou blanc, oignons rouges émincés et carottes.</p>
-                    <span class="text-orange-600 text-xl font-bold">€2.50</span>
-                </div>
-
-                <!-- Article du Menu: Box Katsu -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="assets/img/box katsu.png" alt="Box Katsu" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Box Katsu</h3>
-                    <p class="text-gray-600 mb-4">Boîte de 8 morceaux de poulet mariné frits panko. Servis avec au choix sauce spicy ou douce.</p>
-                    <span class="text-orange-600 text-xl font-bold">€8.00</span>
-                </div>
-
-                <!-- Article du Menu: Nasi Goreng Poulet/Crevettes -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="assets/img/nasi goreng.png" alt="Nasi Goreng Poulet/Crevettes" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Nasi Goreng poulet/crevettes</h3>
-                    <p class="text-gray-600 mb-4">Riz indonésien mariné sauté avec un émincé de poulet et crevettes, du kecap manis, épices et légumes.</p>
-                    <span class="text-orange-600 text-xl font-bold">€9.50</span>
-                </div>
-
-                <!-- Article du Menu: Gua Bao - Porc Dongpo -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="assets/img/le porc dongpo.png" alt="Gua Bao - Porc Dongpo" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Gua Bao - Porc Dongpo</h3>
-                    <p class="text-gray-600 mb-4">Bao bun moelleux vapeur, garni de poitrine de porc mijotée.</p>
-                    <span class="text-orange-600 text-xl font-bold">€10.00</span>
-                </div>
-
-                <!-- Article du Menu: Gua Bao - Saï Gok -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="assets/img/le sai gok.png" alt="Gua Bao - Saï Gok" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Gua Bao - Saï Gok</h3>
-                    <p class="text-gray-600 mb-4">Bao bun moelleux vapeur, garni de saucisse de porc à la citronnelle tranchée.</p>
-                    <span class="text-orange-600 text-xl font-bold">€10.00</span>
-                </div>
-
-                <!-- Article du Menu: Gua Bao - Veggie -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Gua+Bao+Veggie" alt="Gua Bao - Veggie" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Gua Bao - Veggie</h3>
-                    <p class="text-gray-600 mb-4">Bao bun moelleux vapeur, garni de champignons japonais Shimeji avec une pâte à frire assaisonnée et panure panko.</p>
-                    <span class="text-orange-600 text-xl font-bold">€10.00</span>
-                </div>
-
-                <!-- Article du Menu: Gua Bao - Katsu -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Gua+Bao+Katsu" alt="Gua Bao - Katsu" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Gua Bao - Katsu</h3>
-                    <p class="text-gray-600 mb-4">Bao bun moelleux vapeur, garni de morceaux de poulet mariné frits panko.</p>
-                    <span class="text-orange-600 text-xl font-bold">€10.00</span>
-                </div>
-
-                <!-- Article du Menu: Poké Poulet -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Poke+Poulet" alt="Poké Poulet" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Poké Poulet</h3>
-                    <p class="text-gray-600 mb-4">Morceaux de poulet marinés panés panko et frits servis sur un bol de riz à sushi assaisonné au gingembre avec légumes marinés, frais et sauce.</p>
-                    <span class="text-orange-600 text-xl font-bold">€12.00</span>
-                </div>
-
-                <!-- Article du Menu: Bò bún -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="assets/img/bo bun.png" alt="Bò bún" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Bò bún</h3>
-                    <p class="text-gray-600 mb-4">Salade fraîche à base de vermicelles de riz assaisonnée avec de la sauce nem, accompagnée de légumes frais et marinés, servis avec un émincé de bœuf mariné.</p>
-                    <span class="text-orange-600 text-xl font-bold">€11.00</span>
-                </div>
-
-                <!-- Article du Menu: Dessert du Moment -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Dessert" alt="Dessert du Moment" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Dessert du moment</h3>
-                    <p class="text-gray-600 mb-4">Demandez à notre équipe notre douceur du jour !</p>
-                    <span class="text-orange-600 text-xl font-bold">€4.50</span>
-                </div>
-
-                <!-- Article du Menu: Boissons -->
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 menu-card">
-                    <img src="https://placehold.co/400x300/FFD700/FFFFFF?text=Boissons" alt="Boissons" class="w-full h-48 object-cover rounded-md mb-4 shadow-sm">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Boissons</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-tight">
-                        Soda: €2.50<br>
-                        Eau (33cl): €1.00<br>
-                        Bubble Tea: €5.50<br>
-                        Thé Glacé maison: €4.00<br>
-                        Café: €1.00
-                    </p>
-                    <span class="text-orange-600 text-xl font-bold">Divers</span>
-                </div>
+            
+            <!-- Le menu sera inséré dynamiquement ici par app.js -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- C'est maintenant vide ! -->
             </div>
 
             <div class="text-center mt-12">
-                <p class="text-gray-700 text-lg mb-4">
-                    Consultez notre <a href="https://www.instagram.com/bao.mao40/" target="_blank" class="text-orange-600 hover:underline font-semibold">page Instagram</a> pour les spéciaux du jour et les ajouts saisonniers !
-                </p>
-                <!-- Bouton Télécharger le Menu -->
-                <a href="assets/pdf/menu_fr.pdf" download class="btn-primary inline-block text-lg">
-                    Télécharger le Menu (PDF) <i class="fas fa-file-pdf ml-2"></i>
-                </a>
+                <p class="text-gray-700 text-lg mb-4">Consultez notre <a href="https://www.instagram.com/bao.mao40/" target="_blank" class="text-orange-600 hover:underline font-semibold">page Instagram</a> pour les spéciaux du jour et les ajouts saisonniers !</p>
+                <a href="assets/pdf/menu_fr.pdf" download class="btn-primary inline-block text-lg">Télécharger le Menu (PDF) <i class="fas fa-file-pdf ml-2"></i></a>
             </div>
         </div>
     </section>
@@ -264,27 +89,8 @@
     <section id="locations" class="py-16 md:py-24 bg-white rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Trouvez Notre Food Truck !</h2>
-            <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                Nous sommes toujours en mouvement, apportant de délicieux bao à différents endroits à travers les Landes (département 40) !
-                Suivez-nous sur Instagram pour notre programme en temps réel et notre localisation exacte.
-            </p>
-
-            <div class="bg-gray-100 p-8 rounded-xl shadow-inner mb-8">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Emplacements et Événements Typiques :</h3>
-                <ul class="list-disc list-inside text-gray-700 text-left max-w-xl mx-auto space-y-2">
-                    <li>Marchés locaux (ex: Dax, Mont-de-Marsan) - Vérifiez Instagram pour les dates spécifiques !</li>
-                    <li>Festivals de Food Trucks & Événements</li>
-                    <li>Événements Privés & Traiteur (Contactez-nous pour les réservations !)</li>
-                    <li>Parcs d'activités pendant les heures de déjeuner</li>
-                </ul>
-            </div>
-
-            <p class="text-xl font-semibold text-orange-600 mb-4">
-                <i class="fab fa-instagram mr-2"></i> Restez informé de nos derniers emplacements :
-            </p>
-            <a href="https://www.instagram.com/bao.mao40/" target="_blank" class="btn-primary inline-block text-lg">
-                Suivez-nous sur Instagram
-            </a>
+            <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">Suivez-nous sur Instagram pour notre programme en temps réel et notre localisation exacte.</p>
+            <a href="https://www.instagram.com/bao.mao40/" target="_blank" class="btn-primary inline-block text-lg">Suivez-nous sur Instagram</a>
         </div>
     </section>
 
@@ -292,10 +98,6 @@
     <section id="contact" class="py-16 md:py-24 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Contactez-Nous</h2>
-            <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                Vous avez une question, souhaitez nous réserver pour un événement, ou simplement dire bonjour ? Nous serions ravis de vous entendre !
-            </p>
-
             <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-8 md:space-y-0">
                 <div class="flex items-center space-x-4 bg-white p-6 rounded-xl shadow-lg w-full md:w-auto">
                     <i class="fas fa-envelope text-orange-500 text-3xl"></i>
@@ -308,15 +110,7 @@
                     <i class="fas fa-phone-alt text-orange-500 text-3xl"></i>
                     <div>
                         <p class="font-semibold text-gray-700">Appelez-nous :</p>
-                        <!-- Numéro de téléphone mis à jour -->
                         <a href="tel:+33626399737" class="text-blue-600 hover:underline">+33 6 26 39 97 37</a>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4 bg-white p-6 rounded-xl shadow-lg w-full md:w-auto">
-                    <i class="fab fa-instagram text-orange-500 text-3xl"></i>
-                    <div>
-                        <p class="font-semibold text-gray-700">Suivez-nous :</p>
-                        <a href="https://www.instagram.com/bao.mao40/" target="_blank" class="text-blue-600 hover:underline">@bao.mao40</a>
                     </div>
                 </div>
             </div>
@@ -328,36 +122,13 @@
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2025 Bao Mao 40. Tous droits réservés.</p>
             <div class="flex justify-center space-x-6 mt-4">
-                <a href="https://www.instagram.com/bao.mao40/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <!-- Ajoutez d'autres liens de médias sociaux si applicable -->
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                    <i class="fab fa-facebook-f text-2xl"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                    <i class="fab fa-twitter text-2xl"></i>
-                </a>
+                <a href="https://www.instagram.com/bao.mao40/" target="_blank" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-2xl"></i></a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // JavaScript pour le basculement du menu mobile
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('mobile-menu-open'); /* Add this class for flex display */
-        });
-
-        // Fermer le menu mobile lorsqu'un lien est cliqué
-        document.querySelectorAll('#mobile-menu a').forEach(item => {
-            item.addEventListener('click', () => {
-                const mobileMenu = document.getElementById('mobile-menu');
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('mobile-menu-open');
-            });
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="menu-data.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
